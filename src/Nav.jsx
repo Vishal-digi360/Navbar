@@ -4,11 +4,11 @@ import { HiMenuAlt1,HiCurrencyYen } from "react-icons/hi";
 
 const Nav = () => {
     let Links =[
-      {name:"HOME",link:"/"},
-      {name:"SERVICE",link:"/"},
-      {name:"ABOUT",link:"/"},
-      {name:"BLOG'S",link:"/"},
-      {name:"CONTACT",link:"/"},
+      {name:"HOME",link:"https://portfoliobyvishal.netlify.app/"},
+      {name:"SERVICE",link:"https://portfoliobyvishal.netlify.app/"},
+      {name:"ABOUT",link:"https://portfoliobyvishal.netlify.app/"},
+      {name:"BLOG'S",link:"https://portfoliobyvishal.netlify.app/"},
+      {name:"CONTACT",link:"https://portfoliobyvishal.netlify.app/"},
     ];
     let [open,setOpen]=useState(false);
   return (
@@ -23,20 +23,21 @@ const Nav = () => {
       </div>
       
       <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
-      <HiMenuAlt1 ></HiMenuAlt1>
+      <HiMenuAlt1 name={open ? 'close':'menu'}></HiMenuAlt1>
       </div>
 
-      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ':'top-[-490px]'}`}>
+      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-300 ease-in ${open ? 'top-20 ':'top-[-490px]'}`}>
         {
           Links.map((link)=>(
             <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
-              <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</a>
+              <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-100'>{link.name}</a>
             </li>
           ))
         }
         <Button>
           Get Started
         </Button>
+         
       </ul>
       </div>
     </div>
